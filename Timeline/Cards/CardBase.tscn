@@ -1,0 +1,341 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Cards/Basic.png" type="Texture" id=1]
+[ext_resource path="res://Cards/CardBase.gd" type="Script" id=2]
+[ext_resource path="res://font/Comfortaa-Bold.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="GDScript" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://font/Comfortaa-Bold2.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 9
+outline_color = Color( 0.356863, 0.0156863, 0.0156863, 1 )
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 22
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=6]
+
+[sub_resource type="DynamicFont" id=7]
+size = 25
+outline_color = Color( 0.356863, 0.0156863, 0.0156863, 1 )
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 22
+font_data = ExtResource( 3 )
+
+[node name="CardBase" type="MarginContainer"]
+margin_right = 250.0
+margin_bottom = 350.0
+rect_pivot_offset = Vector2( 125, 175 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Card" type="Sprite" parent="."]
+position = Vector2( 1.3576, 5.22116 )
+texture = ExtResource( 1 )
+centered = false
+script = SubResource( 9 )
+
+[node name="Bars" type="VBoxContainer" parent="."]
+margin_right = 250.0
+margin_bottom = 350.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gap1" type="MarginContainer" parent="Bars"]
+margin_right = 250.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="TopBar" type="HBoxContainer" parent="Bars"]
+margin_top = 29.0
+margin_right = 250.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 250, 25 )
+
+[node name="LeftGap" type="MarginContainer" parent="Bars/TopBar"]
+margin_right = 46.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+
+[node name="Type" type="MarginContainer" parent="Bars/TopBar"]
+margin_left = 50.0
+margin_right = 200.0
+margin_bottom = 25.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar/Type"]
+margin_right = 150.0
+margin_bottom = 25.0
+
+[node name="Label" type="Label" parent="Bars/TopBar/Type/CenterContainer"]
+margin_right = 150.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 150, 25 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.356863, 0.0156863, 0.0156863, 1 )
+text = "Guerras"
+align = 1
+autowrap = true
+
+[node name="RightGap" type="MarginContainer" parent="Bars/TopBar"]
+margin_left = 204.0
+margin_right = 250.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+
+[node name="Gap2" type="MarginContainer" parent="Bars"]
+margin_top = 58.0
+margin_right = 250.0
+margin_bottom = 95.0
+size_flags_vertical = 3
+
+[node name="MidBar" type="HBoxContainer" parent="Bars"]
+margin_top = 99.0
+margin_right = 250.0
+margin_bottom = 166.0
+rect_min_size = Vector2( 250, 25 )
+
+[node name="LeftGap" type="MarginContainer" parent="Bars/MidBar"]
+margin_right = 21.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+
+[node name="Description" type="MarginContainer" parent="Bars/MidBar"]
+margin_left = 25.0
+margin_right = 225.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/MidBar/Description"]
+margin_right = 200.0
+margin_bottom = 67.0
+
+[node name="Label" type="Label" parent="Bars/MidBar/Description/CenterContainer"]
+margin_left = 25.0
+margin_right = 175.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 150, 25 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.243137, 0.0117647, 0.0117647, 1 )
+text = "Hecho histórico que para muchos marca el fin de la Edad Media. El Imperio Otomano logra destruir el Imperio Bizantino al invadir su capital."
+align = 3
+autowrap = true
+
+[node name="RightGap" type="MarginContainer" parent="Bars/MidBar"]
+margin_left = 229.0
+margin_right = 250.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+
+[node name="Gap3" type="MarginContainer" parent="Bars"]
+margin_top = 170.0
+margin_right = 250.0
+margin_bottom = 207.0
+size_flags_vertical = 3
+
+[node name="BottomBar" type="HBoxContainer" parent="Bars"]
+margin_top = 211.0
+margin_right = 250.0
+margin_bottom = 295.0
+rect_min_size = Vector2( 250, 25 )
+
+[node name="LeftGap" type="MarginContainer" parent="Bars/BottomBar"]
+margin_right = 46.0
+margin_bottom = 84.0
+size_flags_horizontal = 3
+
+[node name="Event" type="MarginContainer" parent="Bars/BottomBar"]
+margin_left = 50.0
+margin_right = 200.0
+margin_bottom = 84.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar/Event"]
+margin_right = 150.0
+margin_bottom = 84.0
+
+[node name="Label" type="Label" parent="Bars/BottomBar/Event/CenterContainer"]
+margin_right = 150.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 150, 25 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.356863, 0.0156863, 0.0156863, 1 )
+text = "Caída de Constantinopla"
+align = 1
+autowrap = true
+
+[node name="RightGap" type="MarginContainer" parent="Bars/BottomBar"]
+margin_left = 204.0
+margin_right = 250.0
+margin_bottom = 84.0
+size_flags_horizontal = 3
+
+[node name="Gap4" type="MarginContainer" parent="Bars"]
+margin_top = 299.0
+margin_right = 250.0
+margin_bottom = 349.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="CardBack" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+centered = false
+
+[node name="BarsBack" type="VBoxContainer" parent="."]
+visible = false
+margin_right = 250.0
+margin_bottom = 350.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gap1" type="MarginContainer" parent="BarsBack"]
+margin_right = 250.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="TopBar" type="HBoxContainer" parent="BarsBack"]
+margin_top = 29.0
+margin_right = 250.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 250, 25 )
+
+[node name="LeftGap" type="MarginContainer" parent="BarsBack/TopBar"]
+margin_right = 21.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+
+[node name="Type" type="MarginContainer" parent="BarsBack/TopBar"]
+margin_left = 25.0
+margin_right = 225.0
+margin_bottom = 25.0
+
+[node name="CenterContainer" type="CenterContainer" parent="BarsBack/TopBar/Type"]
+margin_right = 200.0
+margin_bottom = 25.0
+
+[node name="Label" type="Label" parent="BarsBack/TopBar/Type/CenterContainer"]
+margin_right = 200.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 200, 25 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.356863, 0.0156863, 0.0156863, 1 )
+text = "Guerras"
+align = 1
+autowrap = true
+
+[node name="RightGap" type="MarginContainer" parent="BarsBack/TopBar"]
+margin_left = 229.0
+margin_right = 250.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+
+[node name="Gap2" type="MarginContainer" parent="BarsBack"]
+margin_top = 58.0
+margin_right = 250.0
+margin_bottom = 134.0
+size_flags_vertical = 3
+
+[node name="MidBar" type="HBoxContainer" parent="BarsBack"]
+margin_top = 138.0
+margin_right = 250.0
+margin_bottom = 167.0
+rect_min_size = Vector2( 250, 25 )
+
+[node name="LeftGap" type="MarginContainer" parent="BarsBack/MidBar"]
+margin_right = 21.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+
+[node name="YearLabel" type="MarginContainer" parent="BarsBack/MidBar"]
+margin_left = 25.0
+margin_right = 225.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="CenterContainer" type="CenterContainer" parent="BarsBack/MidBar/YearLabel"]
+margin_right = 200.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 6 )
+
+[node name="Label" type="Label" parent="BarsBack/MidBar/YearLabel/CenterContainer"]
+margin_left = 25.0
+margin_right = 175.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 25 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.243137, 0.0117647, 0.0117647, 1 )
+text = "1453"
+align = 1
+autowrap = true
+
+[node name="RightGap" type="MarginContainer" parent="BarsBack/MidBar"]
+margin_left = 229.0
+margin_right = 250.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+
+[node name="Gap3" type="MarginContainer" parent="BarsBack"]
+margin_top = 171.0
+margin_right = 250.0
+margin_bottom = 247.0
+size_flags_vertical = 3
+
+[node name="BottomBar" type="HBoxContainer" parent="BarsBack"]
+margin_top = 251.0
+margin_right = 250.0
+margin_bottom = 296.0
+rect_min_size = Vector2( 250, 25 )
+
+[node name="LeftGap" type="MarginContainer" parent="BarsBack/BottomBar"]
+margin_right = 46.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="Event" type="MarginContainer" parent="BarsBack/BottomBar"]
+margin_left = 50.0
+margin_right = 200.0
+margin_bottom = 45.0
+
+[node name="CenterContainer" type="CenterContainer" parent="BarsBack/BottomBar/Event"]
+margin_right = 150.0
+margin_bottom = 84.0
+
+[node name="Label" type="Label" parent="BarsBack/BottomBar/Event/CenterContainer"]
+margin_right = 150.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 150, 25 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.356863, 0.0156863, 0.0156863, 1 )
+text = "Caída de Constantinopla"
+align = 1
+autowrap = true
+
+[node name="RightGap" type="MarginContainer" parent="BarsBack/BottomBar"]
+margin_left = 204.0
+margin_right = 250.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="Gap4" type="MarginContainer" parent="BarsBack"]
+margin_top = 300.0
+margin_right = 250.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 0, 50 )

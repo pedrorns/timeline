@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://PlaySpace.gd" type="Script" id=1]
+[ext_resource path="res://DeckDraw.gd" type="Script" id=2]
+[ext_resource path="res://Cards/Back_Texture.png" type="Texture" id=3]
+[ext_resource path="res://Cards/Gold_Border.png" type="Texture" id=4]
+[ext_resource path="res://Cards/Background4.png" type="Texture" id=5]
+[ext_resource path="res://Cards.gd" type="Script" id=6]
+[ext_resource path="res://Cards/Nice.png" type="Texture" id=7]
+[ext_resource path="res://Cards/Oops.png" type="Texture" id=8]
+
+[node name="PlaySpace" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512, 296 )
+scale = Vector2( 0.559687, 0.536145 )
+texture = ExtResource( 5 )
+
+[node name="Cards" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="Deck" type="Node2D" parent="."]
+position = Vector2( 16, 360 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DeckDraw" type="TextureButton" parent="Deck"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 48.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_disabled = ExtResource( 4 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nice" type="Sprite" parent="."]
+visible = false
+position = Vector2( 152, 80 )
+texture = ExtResource( 7 )
+
+[node name="Oops" type="Sprite" parent="."]
+visible = false
+position = Vector2( 152, 80 )
+texture = ExtResource( 8 )
